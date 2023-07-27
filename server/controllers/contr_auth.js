@@ -1,5 +1,6 @@
 import User from '../models/user.js'
 import bcrypt from 'bcryptjs' 
+import jwt from 'jsonwebtoken'
 
 
 // Register User
@@ -38,12 +39,65 @@ export const register = async(req, res) => {
 // Login user
 export const login = async(req, res) => {
     try{
+        const { username, password} = req.body 
+        const user = await User.findOne({ username})
+        if (!user) {
+            return res.json({
+                message: "Дане ім'я не існує."
+            })
+        }
 
-    } catch (error) {}
+        const isPasswordCorrect = await bcrypt.compare( password, user.password)
+        if (!isPasswordCorrect) {
+            return res.json({
+                message: "Не вірний пароль."
+            })  
+        }
+ 
+        const token = jwt.sign({
+            id: user._id,
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: "30d" }
+        )
+
+        res.json({
+            token, user, message:'Ви увійшли в систему.'
+        })
+
+
+    } catch (error) {
+        res.json({
+            message:'Похибка авторизації.'
+        })
+    }
 }
 // Get me
 export const getMe = async(req, res) => {
     try{
+        const user = await User.findById(req.userId)
 
-    } catch (error) {}
+        if (!user) {
+            return res.json({
+                message: "Дане ім'я не існує."
+            })
+        }
+
+        const token = jwt.sign({
+            id: user._id,
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: "30d" }
+        )
+
+        res.json({
+            user,
+            token
+        })
+
+    } catch (error) {
+        res.json({
+            message:'Похибка авторизації.'
+        })
+    }
 }
