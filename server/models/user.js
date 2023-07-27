@@ -2,8 +2,7 @@ import { Timestamp } from "mongodb"
 import mongoose from "mongoose"
 
 
-const UserSchema = new mongoose.Schema(
-    {
+const UserSchema = new mongoose.Schema({
        username:{
             type: String,
             required: true,
@@ -13,15 +12,13 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true
        },
-       {
-        posts: [
+       posts: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Post'
-            }   
-        ]
-       }
-    },
+            },   
+        ],
+       },
     { timestamps: true}
 )
 

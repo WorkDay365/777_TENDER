@@ -1,10 +1,10 @@
-import {Router} from 'express'
-import {register, login, getMe} from '../controllers/contr_auth.js'
+import { Router } from 'express'
+import { register, login, getMe } from '../controllers/contr_auth.js'
 
-const route = new Router()
+const router = new Router()
 
 // Register
-router.post('/register', register()
+router.post('/register', register)
 
 // Login
 router.post('/login', login) 

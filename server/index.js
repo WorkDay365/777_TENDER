@@ -6,7 +6,7 @@ import cors from "cors"
 
 import authRoute from './routes/auth.js'
     
-}
+
 
 const app = express()
 dotenv.config()
@@ -22,7 +22,7 @@ app.use(cors())
 app.use(express.json())
 
 // Routes
-app.use('/api/auth',vauthRoute)
+app.use('/api/auth',authRoute)
 
 // app.get('/', (req, res) => {
 //     return res.json({message:'All is fine...'})
