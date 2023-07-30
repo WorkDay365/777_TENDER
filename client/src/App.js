@@ -11,6 +11,8 @@ import {AddPostPage} from './pages/AddPostPage.jsx'
 import {RegisterPage} from './pages/RegisterPage.jsx'
 import {LoginPage} from './pages/LoginPage.jsx'
 import {EditPostPage} from './pages/EditPostPage.jsx'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
@@ -26,26 +28,9 @@ function App() {
         <Route path ='login' element={<LoginPage />} />
         <Route path =':id/edit' element={<EditPostPage />} />
       </Routes>
-    </Layout>
 
-
-    // <div className="text-2xl text-red-600">
-    //   TEXT
-    //   {/* <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header> */}
-    // </div>
+      <ToastContainer position='bottom-right' />
+    </Layout> 
   );
 }
 
