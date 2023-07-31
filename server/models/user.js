@@ -1,25 +1,24 @@
-import { Timestamp } from "mongodb"
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
-
-const UserSchema = new mongoose.Schema({
-       username:{
+const UserSchema = new mongoose.Schema(
+    {
+        username: {
             type: String,
             required: true,
-            unique: true
-       } ,
-       password:{
+            unique: true,
+        },
+        password: {
             type: String,
-            required: true
-       },
-       posts: [
+            required: true,
+        },
+        posts: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'Post'
-            },   
+                ref: 'Post',
+            },
         ],
-       },
-    { timestamps: true}
+    },
+    { timestamps: true },
 )
 
 export default mongoose.model('User', UserSchema)
