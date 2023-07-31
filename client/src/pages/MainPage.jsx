@@ -18,7 +18,7 @@ export const MainPage = () => {
     if (!posts.length) {
         return (
             <div className='text-xl text-center text-white py-10'>
-                Постов не существует.
+                Тендерів не існує.
             </div>
         )
     }
@@ -33,7 +33,7 @@ export const MainPage = () => {
                 </div>
                 <div className='basis-1/5'>
                     <div className='text-xs uppercase text-white'>
-                        Популярное:
+                        Популярне:
                     </div>
 
                     {popularPosts?.map((post, idx) => (

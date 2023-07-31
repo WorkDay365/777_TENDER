@@ -34,7 +34,7 @@ export const PostPage = () => {
     const removePostHandler = () => {
         try {
             dispatch(removePost(params.id))
-            toast('Пост был удален')
+            toast('Пост був видален')
             navigate('/posts')
         } catch (error) {
             console.log(error)
@@ -165,7 +165,7 @@ export const PostPage = () => {
                             onClick={handleSubmit}
                             className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4'
                         >
-                            Отправить
+                            Відправити
                         </button>
                     </form>
 
