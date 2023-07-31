@@ -103,7 +103,7 @@ export const EditPostPage = () => {
                     onClick={submitHandler}
                     className='flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4'
                 >
-                    Обовити
+                    Оновити
                 </button>
 
                 <button

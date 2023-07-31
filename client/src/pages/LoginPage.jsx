@@ -65,7 +65,7 @@ export const LoginPage = () => {
                     to='/register'
                     className='flex justify-center items-center text-xs text-white'
                 >
-                    Нет аккаунта ?
+                   Немає облікового запису ?
                 </Link>
             </div>
         </form>
