@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Layout } from './components/Layout.jsx'
 import { Routes, Route } from 'react-router-dom'
 
@@ -36,6 +37,8 @@ function App() {
             <ToastContainer position='bottom-right' />
         </Layout>
     )
+
+
 }
 
 export default App

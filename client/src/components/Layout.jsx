@@ -1,14 +1,7 @@
 import React from 'react'
-import { Navbar} from './Navbar'
 
-export const Layout = ({ children}) => {
+export const Layout = () => {
   return (
-    <React.Fragment>
-      <div>
-        <Navbar/>
-        {children} 
-      </div>
-    </React.Fragment>
-    
+    <div>Layout</div>
   )
 }
